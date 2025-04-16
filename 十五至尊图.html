@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十五至尊图</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .process {
+            text-align: left;
+            cursor: pointer;
+            color: #2980b9;
+            text-decoration: underline;
+            font-size: 12px;
+            white-space: nowrap;
+            display: block;
+            margin: 2px 0;
+        }
+        .process:hover {
+            color: #e74c3c;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        #modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 70%;
+            max-width: 800px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        #close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #close:hover {
+            color: black;
+        }
+        .knowledge-area {
+            background-color: #2ecc71;
+            color: white;
+            font-weight: bold;
+        }
+        .process-group {
+            background-color: #2980b9;
+            color: white;
+            font-weight: bold;
+        }
+        .process-number {
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            margin-right: 5px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>十五至尊图</h1>
+    
+    <table>
+        <tr>
+            <th>知识领域\过程组</th>
+            <th class="process-group">启动</th>
+            <th class="process-group">规划</th>
+            <th class="process-group">执行</th>
+            <th class="process-group">监控</th>
+            <th class="process-group">收尾</th>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目整合管理</td>
+            <td><span class="process" onclick="showProcess('1. 制定项目章程（一次）', '编写一份正式批准项目并授权项目经理在项目活动中使用组织资源的文件的过程', '明确项目与组织战略目标之间的直接联系，确立项目的正式地位，并展示组织对项目的承诺')"><span class="process-number">1</span>制定项目章程（一次）</span></td>
+            <td><span class="process" onclick="showProcess('2. 制定项目管理计划（一次）', '定义、准备和协调所有子计划，并把它们整合为一份综合项目管理计划的过程', '生成一份综合文件，用于确定所有项目工作的基础及其执行方式，它仅开展一次或仅在项目的预定义点开展')"><span class="process-number">2</span>制定项目管理计划（一次）</span></td>
+            <td>
+                <span class="process" onclick="showProcess('3. 指导和管理项目执行（重复）', '为实现项目目标而领导和执行项目管理计划中所确定的工作，并实施已批准变更的过程', '对项目工作和可交付成果开展综合管理，以提高项目成功的可能性')"><span class="process-number">3</span>指导和管理项目执行（重复）</span>
+                <span class="process" onclick="showProcess('4. 管理项目知识（重复）', '使用现有知识并生成新知识，以实现项目目标并且帮助组织学习的过程', '利用已有的组织知识来创造或改进项目成果，并且使当前项目创造的知识可用于支持组织运营和未来的项目或阶段')"><span class="process-number">4</span>管理项目知识（重复）</span>
+            </td>
+            <td>
+                <span class="process" onclick="showProcess('5. 监控项目工作（重复）', '跟踪、审查和报告项目进展，以实现项目管理计划确定的绩效目标的过程', '让干系人了解项目的当前状态并认可为处理绩效问题而采取的行动，以及通过成本和进度预测，让干系人了解未来项目状态')"><span class="process-number">5</span>监控项目工作（重复）</span>
+                <span class="process" onclick="showProcess('6. 实施整体变更控制（重复）', '审查所有变更请求，批准变更，管理对可交付成果、组织过程资产、项目文件和项目管理计划的变更，并对变更处理结果进行沟通的过程', '从整合的角度考虑记录在案的项目变更，从而降低因未考虑变更对整个项目目标或计划的影响而产生的项目风险')"><span class="process-number">6</span>实施整体变更控制（重复）</span>
+            </td>
+            <td><span class="process" onclick="showProcess('7. 结束项目或阶段（一次）', '完结所有项目管理过程组的所有活动，以正式结束项目或阶段的过程', '存档项目或阶段信息，完成计划的工作，释放组织团队资源以展开新的工作')"><span class="process-number">7</span>结束项目或阶段（一次）</span></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目范围管理</td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('1. 规划范围管理（一次）', '编制范围管理计划，书面描述将如何定义、确认和控制项目范围的过程', '在整个项目中对如何管理范围提供指南和方向')"><span class="process-number">1</span>规划范围管理（一次）</span>
+                <span class="process" onclick="showProcess('2. 收集需求（一次）', '为实现项目目标而确定、记录并管理干系人的需要和需求的过程', '为定义产品范围和项目范围奠定基础，且仅开展一次或仅在项目的预定义点开展')"><span class="process-number">2</span>收集需求（一次）</span>
+                <span class="process" onclick="showProcess('3. 定义范围（重复）', '制定项目和产品详细描述的过程', '描述产品、服务或成果的边界和验收标准')"><span class="process-number">3</span>定义范围（重复）</span>
+                <span class="process" onclick="showProcess('4. 创建 WBS（一次）-范围基准', '将项目可交付成果和项目工作分解为较小的、更容易管理的组件的过程', '为所要交付的内容提供架构，它仅开展一次或仅在项目的预定义点开展')"><span class="process-number">4</span>创建 WBS（一次）-范围基准</span>
+            </td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('5. 确认范围（重复）', '正式验收已完成的可交付成果的过程', '使验收过程具有客观性;同时通过确认每个可交付成果，来提高最终产品、服务或成果获得验收的可能性')"><span class="process-number">5</span>确认范围（重复）</span>
+                <span class="process" onclick="showProcess('6. 控制范围（重复）', '监督项目和产品的范围状态，管理范围基准变更的过程', '在整个项目期间保持对范围基准的维护，且需要在整个项目期间开展')"><span class="process-number">6</span>控制范围（重复）</span>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目进度管理</td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('1. 规划进度管理（一次）', '为规划、编制、管理、执行和控制项目进度而制订政策、程序和文档的过程', '为整个项目过程中的管理、执行和控制项目进度提供指南和方向')"><span class="process-number">1</span>规划进度管理（一次）</span>
+                <span class="process" onclick="showProcess('2. 定义活动（重复）', '识别和记录为完成项目可交付成果而采取的具体行动的过程', '将工作包分解为活动，作为对项目工作进行估算、进度规划、执行、监督和控制的基础')"><span class="process-number">2</span>定义活动（重复）</span>
+                <span class="process" onclick="showProcess('3. 排列活动顺序（重复）', '识别和记录项目活动之间的关系', '定义工作之间的逻辑顺序，以便在既定的所有项目制约因素下获得最高的效率')"><span class="process-number">3</span>排列活动顺序（重复）</span>
+                <span class="process" onclick="showProcess('4. 估算活动持续时间（重复）', '根据资源估算的结果，估算完成单项活动所需工作时段数的过程', '确定完成每个活动所需花费的时间量')"><span class="process-number">4</span>估算活动持续时间（重复）</span>
+                <span class="process" onclick="showProcess('5. 制订进度计划（重复）-进度基准', '分析活动顺序、持续时间、资源需求和进度制约因素，创建进度模型，从而落实项目执行和监控的过程', '为完成项目活动而制定具有计划日期的进度模型')"><span class="process-number">5</span>制订进度计划（重复）-进度基准</span>
+            </td>
+            <td></td>
+            <td><span class="process" onclick="showProcess('6. 控制进度（重复）', '监督项目状态，以更新项目进度和管理进度基准变更的过程', '在整个项目期间保持对进度基准的维护，且需要在整个项目期间开展')"><span class="process-number">6</span>控制进度（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目成本管理</td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('1. 规划成本管理（一次）', '确定如何估算、预算、管理、监督和控制项目成本的过程', '在整个项目中为如何管理项目成本提供指南和方向')"><span class="process-number">1</span>规划成本管理（一次）</span>
+                <span class="process" onclick="showProcess('2. 估算成本（重复）', '对完成项目工作所需资源成本进行近似估算的过程', '确定项目所需的资金')"><span class="process-number">2</span>估算成本（重复）</span>
+                <span class="process" onclick="showProcess('3. 制定预算（一次）-成本基准', '汇总所有单个活动或工作包的估算成本，建立一个经批准的成本基准的过程', '确定可据以监督和控制项目绩效的成本基准')"><span class="process-number">3</span>制定预算（一次）-成本基准</span>
+            </td>
+            <td></td>
+            <td><span class="process" onclick="showProcess('4. 控制成本（重复）', '监督项目状态，以更新项目成本和管理成本基准变更的过程', '在整个项目期间保持对成本基准的维护')"><span class="process-number">4</span>控制成本（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目质量管理</td>
+            <td></td>
+            <td><span class="process" onclick="showProcess('5. 规划质量管理（一次）', '识别项目及其可交付成果的质量要求和(或)标准，并书面描述项目将如何证明符合质量要求和(或)标准的过程', '为在整个项目期间如何管理和核实质量提供指南和方向')"><span class="process-number">1</span>规划质量管理（一次）</span></td>
+            <td><span class="process" onclick="showProcess('6. 管理质量（重复）', '把组织的质量政策用于项目，并将质量管理计划转化为可执行的质量活动的过程', '提高实现质量目标的可能性，以及识别无效过程和导致质量低劣的原因')"><span class="process-number">2</span>管理质量（重复）</span></td>
+            <td><span class="process" onclick="showProcess('7. 控制质量（重复）', '为了评估绩效，确保项目输出完整、正确且满足客户期望，而监督和记录质量管理活动执行结果的过程', '核实项目可交付成果和工作已经达到主要相关方的质量要求，可供最终验收')"><span class="process-number">3</span>控制质量（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目资源管理</td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('1. 规划资源管理（一次）', '定义如何估算、获取、管理和利用团队以及实物资源的过程', '根据项目类型和复杂程度确定适用于项目资源的管理方法和管理程度')"><span class="process-number">1</span>规划资源管理（一次）</span>
+                <span class="process" onclick="showProcess('2. 估算活动资源（重复）', '估算执行项目所需的团队资源，以及材料、设备和用品的类型和数量的过程', '明确完成项目所需的资源种类、数量和特性')"><span class="process-number">2</span>估算活动资源（重复）</span>
+            </td>
+            <td>
+                <span class="process" onclick="showProcess('3. 获取资源（重复）', '获取项目所需的团队成员、设施、设备、材料、用品和其他资源的过程', '概述和指导资源的选择，并将其分配给相应的活动')"><span class="process-number">3</span>获取资源（重复）</span>
+                <span class="process" onclick="showProcess('4. 建设团队（重复）', '提高工作能力，促进团队成员互动，改善团队整体氛围，以提高项目绩效的过程', '改进团队协作、增强人际关系技能、激励员工、减少摩擦以及提升整体项目绩效')"><span class="process-number">4</span>建设团队（重复）</span>
+                <span class="process" onclick="showProcess('5. 管理团队（重复）', '跟踪团队成员工作表现，提供反馈，解决问题并管理团队变更，以优化项目绩效的过程', '影响团队行为、管理冲突以及解决问题')"><span class="process-number">5</span>管理团队（重复）</span>
+            </td>
+            <td><span class="process" onclick="showProcess('6. 控制资源（重复）', '确保按计划为项目分配实物资源，以及根据资源使用计划监督资源实际使用情况，并采取必要纠正措施的过程', '确保所分配的资源适时适地可用于项目，且在不再需要时被释放')"><span class="process-number">6</span>控制资源（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目沟通管理</td>
+            <td></td>
+            <td><span class="process" onclick="showProcess('1. 规划沟通管理（重复）', '基于每个干系人或干系人群体的信息需求、可用的组织资产，以及具体项目的需求，为项目沟通活动制定恰当的方法和计划的过程', '为及时向干系人提供相关信息，引导干系人有效参与项目，而编制书面沟通计划')"><span class="process-number">1</span>规划沟通管理（重复）</span></td>
+            <td><span class="process" onclick="showProcess('2. 管理沟通（重复）', '确保项目信息及时且恰当地收集、生成、发布、存储、检索、管理、监督和最终处置的过程', '促成项目团队与干系人之间的有效信息流动')"><span class="process-number">2</span>管理沟通（重复）</span></td>
+            <td><span class="process" onclick="showProcess('3. 监督沟通（重复）', '确保满足项目及其相关方的信息需求的过程', '按沟通管理计划和干系人参与计划的要求优化信息传递流程')"><span class="process-number">3</span>监督沟通（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目风险管理</td>
+            <td></td>
+            <td>
+                <span class="process" onclick="showProcess('1. 规划风险管理（一次）', '定义如何实施项目风险管理活动的过程', '确保风险管理的水平、方法和可见度与项目风险程度，以及项目对组织和其他相关方的重要程度相匹配')"><span class="process-number">1</span>规划风险管理（一次）</span>
+                <span class="process" onclick="showProcess('2. 识别风险（重复）', '识别单个项目风险以及整体项目风险的来源，并记录风险特征的过程', '记录现有的单个项目风险，以及整体项目风险的来源;同时，汇集相关信息，以便项目团队能够恰当应对已识别的风险')"><span class="process-number">2</span>识别风险（重复）</span>
+                <span class="process" onclick="showProcess('3. 实施定性风险分析（重复）', '通过评估单个项目风险发生的概率和影响以及其他特征，对风险进行优先级排序，从而为后续分析或行动提供基础的过程', '重点关注高优先级别的风险')"><span class="process-number">3</span>实施定性风险分析（重复）</span>
+                <span class="process" onclick="showProcess('4. 实施定量风险分析（重复，非必需）', '就已识别风险对项目整体目标的影响进行定量分析的过程', '量化整体项目风险敞口，并提供额外的定量风险信息，以支持风险应对规划')"><span class="process-number">4</span>实施定量风险分析（重复，非必需）</span>
+                <span class="process" onclick="showProcess('5. 规划风险应对（重复）', '为处理整体项目风险敞口，以及应对单个项目风险，而制定可选方案、选择应对策略并商定应对行动的过程', '制定应对整体项目风险和单个项目风险的适当方法;分配资源，并根据需要将相关活动添加进项目文件和项目管理计划')"><span class="process-number">5</span>规划风险应对（重复）</span>
+            </td>
+            <td><span class="process" onclick="showProcess('6. 实施风险应对（重复）', '执行商定的风险应对计划的过程', '确保按计划执行商定的风险应对措施，管理整体项目风险入口、最小化单个项目威胁，以及最大化单个项目机会')"><span class="process-number">6</span>实施风险应对（重复）</span></td>
+            <td><span class="process" onclick="showProcess('7. 监督风险（重复）', '在整个项目期间，监督商定的风险应对计划的实施、跟踪已识别风险、识别和分析新风险，以及评估风险管理有效性的过程', '保证项目决策是在整体项目风险和单个项目风险的当前信息的基础上的')"><span class="process-number">7</span>监督风险（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目采购管理</td>
+            <td></td>
+            <td><span class="process" onclick="showProcess('1. 规划采购管理（一次）', '记录项目采购决策、明确采购方法、识别潜在卖方的过程', '确定是否需要外部支持，如果需要，则还要决定采购什么、如何采购、采购多少，以及何时采购')"><span class="process-number">1</span>规划采购管理（一次）</span></td>
+            <td><span class="process" onclick="showProcess('2. 实施采购（重复）', '获取卖方应答、选择卖方并授予合同的过程', '通过达成协议，使内部和外部干系人的期望协调一致')"><span class="process-number">2</span>实施采购（重复）</span></td>
+            <td><span class="process" onclick="showProcess('3. 控制采购（重复）', '管理采购关系、监督合同执行情况，并根据需要实施变更和采取纠正措施的过程', '确保买卖双方履行法律协议，满足采购需求')"><span class="process-number">3</span>控制采购（重复）</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="knowledge-area">项目干系人管理</td>
+            <td><span class="process" onclick="showProcess('1. 识别干系人（重复）', '定期识别项目干系人，分析和记录他们的利益、参与度、相互依赖性、影响力和对项目成功的潜在影响的过程', '使项目团队能够建立对每个干系人或干系人群体的适度关注')"><span class="process-number">1</span>识别干系人（重复）</span></td>
+            <td><span class="process" onclick="showProcess('2. 规划干系人参与（重复）', '根据干系人的需求、期望、利益和对项目的潜在影响，制定项目干系人参与项目的方法的过程', '提供与干系人进行有效互动的可行计划')"><span class="process-number">2</span>规划干系人参与（重复）</span></td>
+            <td><span class="process" onclick="showProcess('3. 管理干系人参与（重复）', '监督项目干系人关系，并通过修订参与策略和计划来引导干系人合理参与项目的过程', '帮助项目经理提升来自干系人的支持，并把干系人的抵制降至最低，从而显著提高项目成功的机会')"><span class="process-number">3</span>管理干系人参与（重复）</span></td>
+            <td><span class="process" onclick="showProcess('4. 监督干系人参与（重复）', '监督项目干系人关系，并通过修订参与策略和计划来引导干系人合理参与项目的过程', '随着项目进展和环境变化，维持并提升干系人参与活动的效率和效果')"><span class="process-number">4</span>监督干系人参与（重复）</span></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div id="modal">
+        <div id="modal-content">
+            <span id="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <h3>定义</h3>
+            <p id="modal-definition"></p>
+            <h3>作用</h3>
+            <p id="modal-purpose"></p>
+        </div>
+    </div>
+
+    <script>
+        function showProcess(name, definition, purpose) {
+            document.getElementById('modal-title').textContent = name;
+            document.getElementById('modal-definition').textContent = definition;
+            document.getElementById('modal-purpose').textContent = purpose;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        document.getElementById('close').onclick = function() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
